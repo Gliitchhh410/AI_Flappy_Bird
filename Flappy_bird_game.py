@@ -101,7 +101,7 @@ class Pipe():
     def set_height(self):
         self.height = random.randrange(50,450)
         self.top = self.height - self.PIPE_TOP.get_height()
-        self.bot = self.height - self.GAP
+        self.bot = self.height + self.GAP
 
     def move(self):
         self.x -= self.VEL
@@ -196,10 +196,10 @@ def main():
 
         if add_pipe:
             score += 1
-            pipes.append(Pipe(700))
+            pipes.append(Pipe(600))
 
         for r in rem:
-            pipes.remove(random)
+            pipes.remove(r)
 
         base.move()
         draw_window(win , bird, pipes,base)
